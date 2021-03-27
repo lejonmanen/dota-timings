@@ -1,20 +1,13 @@
-.timed-event {
-    border: 1px solid gray;
-    background-color: #DDFCC1;
-    padding: 0.4em 0.8em;
-    margin: 2px;
-    transition: all 1.0s;
+* {
+    box-sizing: border-box;
 }
-.timed-event strong {
-    font-size: 1.1em;
-    display: block;
-}
-.timed-event.near { background-color: #FAE4AD; }
-.timed-event.critical { background-color: #F1A47F; }
-.timed-event.past { background-color: #E9E8E7; }
 
 .game-time {
     font-family: "Courier New";
+    font-weight: bold;
+    font-size: 1.4em;
+    width: 4.2em;
+    display: inline-block;
     /* display: inline; */
 }
 
@@ -24,23 +17,36 @@
     display: flex;
     flex-direction: column;
 }
+.App button {
+    padding: 0.2em 0.4em;
+    border-radius: 0.4em;
+    border: 1px solid gray;
+    box-shadow: 3px 3px 4px 0px #ebebeb;
+    font-size: 1em;
+    margin: 0.1em 0.3em 0.7em 0.3em;
+    width: 4.4em;
+    transition: all 0.4s;
+    outline: none;
+}
+.App button:hover {
+    cursor: pointer;
+    background-color: #d4d4d4;
+}
+.App button:focus {
+    border-color: black;
+}
 
 
 .App header {
-  background-color: #282c34;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    /* font-family: "Courier New"; */
+    background-color: #841819;
+    /* height: 5.3em; */
+    padding: 0.5em 1em;
+
+    font-size: 1.3em;
+    color: #FEF5F4;
 }
-.App header span:first-child { margin-right: 1em; }
-.App footer {
-    background-color: #282c34;
-    min-height: 10vh;
-}
+.App header span:first-child { margin-right: 0.7em; }
 .App main {
     flex: 1 1 auto;
     color: #282c34;

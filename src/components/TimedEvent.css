@@ -1,0 +1,84 @@
+:root {
+	--future: #DDFCC1;
+	--near: #FAE4AD;
+	--near-strong: #FFA639;
+	--critical: #F1A47F;
+	--critical-strong: #FF492C;
+	--past: #E9E8E7;
+	--transition-time: 1.7s;
+	--transition-fast: 0.5s;
+}
+
+.timed-event {
+    border: 3px solid var(--future);
+    background-color: var(--future);
+    padding: 0.35em 0.9em;
+    margin: 0px;
+    transition: all var(--transition-time);
+}
+.timed-event strong {
+    font-size: 1.1em;
+    display: block;
+}
+.timed-event.near {
+	background-color: var(--near);
+	border-color: var(--near);
+	animation-name: flash-near;
+	animation-duration: var(--transition-time);
+}
+.timed-event.critical {
+	background-color: var(--critical);
+	border-color: var(--critical);
+	animation-name: flash-critical;
+	animation-duration: var(--transition-time);
+}
+.timed-event.past {
+	background-color: var(--past);
+	animation-name: hide-past;
+	animation-duration: var(--transition-fast);
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	overflow: hidden;
+}
+.hide { display: none; }
+
+@keyframes flash-near {
+	0% {
+		border-color: var(--near);
+	}
+	10% {
+		border-color: var(--near-strong);
+	}
+	25% {
+		border-color: var(--near);
+	}
+}
+@keyframes flash-critical {
+	0% {
+		border-color: var(--critical);
+	}
+	10% {
+		border-color: var(--critical-strong);
+	}
+	25% {
+		border-color: var(--critical);
+	}
+}
+@keyframes hide-past {
+	0% {
+		padding: 0.35em 0.9em;
+		border-width: 3px;
+	}
+	1% {
+		padding: calc(0.35em + 2.5px) calc(0.9em + 3px);
+		border-width: 0px;
+
+		opacity: 1.0;
+		max-height: 4em;
+	}
+	100% {
+		padding: 0em calc(0.9em + 3px);
+		opacity: 0.45;
+		max-height: 0em;
+	}
+}
