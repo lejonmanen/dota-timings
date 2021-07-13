@@ -9,11 +9,18 @@
 	--transition-fast: 0.5s;
 }
 
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+}
 .timed-event {
-    border: 3px solid var(--future);
+	width: 14em;
+	border: 3px solid var(--future);
     background-color: var(--future);
     padding: 0.35em 0.9em;
-    margin: 0px;
+    margin: 1em;
     transition: all var(--transition-time);
 }
 .timed-event strong {
@@ -34,11 +41,11 @@
 }
 .timed-event.past {
 	background-color: var(--past);
-	animation-name: hide-past;
+	/* animation-name: hide-past;
 	animation-duration: var(--transition-fast);
 	animation-timing-function: linear;
 	animation-fill-mode: forwards;
-	overflow: hidden;
+	overflow: hidden; */
 }
 .hide { display: none; }
 

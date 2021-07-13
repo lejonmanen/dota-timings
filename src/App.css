@@ -24,7 +24,7 @@
     box-shadow: 3px 3px 4px 0px #ebebeb;
     font-size: 1em;
     margin: 0.1em 0.3em 0.7em 0.3em;
-    width: 4.4em;
+    width: 4.6em;
     transition: all 0.4s;
     outline: none;
 }
@@ -46,7 +46,7 @@
     font-size: 1.3em;
     color: #FEF5F4;
 }
-.App header span:first-child { margin-right: 0.7em; }
+.App header span:first-child { margin-right: 1.9em; }
 .App main {
     flex: 1 1 auto;
     color: #282c34;

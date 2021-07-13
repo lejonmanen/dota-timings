@@ -17,5 +17,17 @@ function secToString(seconds) {
 	return `${mins}:${secs}`
 }
 
+function secondsToString(sec) {
+    let text = ''
+    if( sec < 0 ) {
+        text += '-'
+        sec = -sec
+    }
+    let minutes = Math.floor(sec / 60)
+    let seconds = Math.floor(sec % 60) + ''
+    if( seconds.length < 2 ) seconds = '0' + seconds
+    let fraction = Math.round((sec % 1) * 10)
+    return text + `${minutes}:${seconds}.${fraction}`
+}
 
-export { stringToSec, secToString }
+export { stringToSec, secToString, secondsToString }
