@@ -4,13 +4,15 @@ import './TimedEvent.css'
 
 
 //  name: event.name, startTime: event.time, isSingleEvent: !event.periodicity, interval: event.periodicity
-const EventBox = ({ time, name, isSingleEvent, interval }) => {
-	const [lastTime, setLastTime] = useState(time)
-	let nextTime = isSingleEvent ? null : lastTime + interval
+const EventBox = ({ time, startTime, name, isSingleEvent, interval }) => {
+	const [lastTime, setLastTime] = useState(startTime)
+	let nextTime = isSingleEvent ? null
+		: (time < startTime) ? lastTime : lastTime + interval
 
 	let nt = secondsToString(nextTime)
 	let timeLeft = secondsToString(nextTime - time)
 	let timeClass = ''
+	// console.log(`Event: ${name} with next time = ${nt}. time=${time}`);
 	// console.log('Event box:', time, name, interval, lt, nt);
 
 	if( !isSingleEvent ) {
@@ -26,9 +28,9 @@ const EventBox = ({ time, name, isSingleEvent, interval }) => {
 	return (
 		<div className={"timed-event " + timeClass}>
 			<strong> {name} </strong>
-			<div className="next-time"> {nt} </div>
+			<div className="next-time"> {nt} - next </div>
 			{ !isSingleEvent || time < nextTime
-				? <div> {timeLeft} </div>
+				? <div> {timeLeft} - time left </div>
 				: null
 			}
 		</div>
