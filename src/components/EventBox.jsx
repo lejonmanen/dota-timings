@@ -6,8 +6,9 @@ import './TimedEvent.css'
 //  name: event.name, startTime: event.time, isSingleEvent: !event.periodicity, interval: event.periodicity
 const EventBox = ({ time, startTime, name, isSingleEvent, interval }) => {
 	const [lastTime, setLastTime] = useState(startTime)
-	let nextTime = isSingleEvent ? null
-		: (time < startTime) ? lastTime : lastTime + interval
+	let nextTime =
+		(time < startTime) ? lastTime : lastTime + (isSingleEvent ? 0 : interval)
+		// isSingleEvent ? null
 
 	let nt = secondsToString(nextTime)
 	let timeLeft = secondsToString(nextTime - time)

@@ -45,6 +45,8 @@ function App() {
     // const modTime = diff => setStringTime(secToString(stringToSec(stringTime) + diff))
     const add3 = () => setTime(t => t + 3)
     const sub3 = () => setTime(t => t - 3)
+    const add30 = () => setTime(t => t + 30)
+    const sub30 = () => setTime(t => t - 30)
 
     const stringTime = secondsToString(time)
 
@@ -59,6 +61,8 @@ function App() {
             <button onClick={resetTime}> Reset </button>
             <button onClick={add3}> +3s. </button>
             <button onClick={sub3}> -3s. </button>
+            <button onClick={add30}> +30s. </button>
+            <button onClick={sub30}> -30s. </button>
 
             <div className="container">
             {events.map(e => <EventBox {...e} time={time} key={e.name} />)}
