@@ -6,6 +6,11 @@ const data = [
 		"periodicity": null
 	},
 	{
+		"name": "Day/night change",
+		"time": 0,
+		"periodicity": 5*60
+	},
+	{
 		"name": "Bounty runes spawn",
 		"time": 0,
 		"periodicity": 3*60
@@ -21,9 +26,9 @@ const data = [
 		"periodicity": 10*30
 	},
 	{
-		"name": "Neutral items T1-T4",
+		"name": "Wisdom rune",
 		"time": 7*60,
-		"periodicity": 10*60
+		"periodicity": 7*60
 	},
 	{
 		"name": "Water rune 1",
@@ -34,6 +39,6 @@ const data = [
 		"name": "Water rune 2",
 		"time": 4*60,
 		"periodicity": null
-	}
+	},
 ]
 export default data

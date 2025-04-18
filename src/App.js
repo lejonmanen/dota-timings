@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import defaultEvents from './data/events.js'
 import EventBox from './components/EventBox'
 import { secondsToString } from './utils/utils'
+import neutralTable from './neutral-token-table.png'
 
 // Game starts at circa -45, but we need some margin to let the user sync the timer
 const defaultStartTime = -24.0 //'-0:24'
@@ -67,6 +68,10 @@ function App() {
             <div className="container">
             {events.map(e => <EventBox {...e} time={time} key={e.name} />)}
             </div>
+
+			<div className="image-container">
+				<img src={neutralTable} alt="Neutral token drop table" />
+			</div>
         </main>
         </div>
     );
